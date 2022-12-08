@@ -29,6 +29,9 @@ screenshot_name = "Screenshot"
 
 # Take a screenshot of the page
 screenshot = driver.get_screenshot_as_png()
+timestamp = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
+file_name = f"screenshot-{timestamp}.png"
+driver.save_screenshot(file_name)
 
 # Save the screenshot to a local file
 with open(screenshot_name, 'wb') as file:
